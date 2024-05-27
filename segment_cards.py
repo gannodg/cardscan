@@ -1,16 +1,17 @@
 import cv2
 import numpy as np
 
+# Test program
 # read the input image
 img = cv2.imread('data/bonds-thomas.png')
 
 # threshold on white
-#lower = (4, 30, 90)
-#upper = (120, 120, 120)
+# lower = (4, 30, 90)
+# upper = (120, 120, 120)
 lower = (190, 190, 190)
 upper = (255, 255, 255)
-#lower = (23, 44, 200)
-#upper = (73, 94, 246)
+# lower = (23, 44, 200)
+# upper = (73, 94, 246)
 thresh = cv2.inRange(img, lower, upper)
 
 # apply morphology
@@ -22,7 +23,7 @@ morph = cv2.morphologyEx(morph, cv2.MORPH_CLOSE, kernel)
 # get largest contour
 contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 contours = contours[0] if len(contours) == 2 else contours[1]
-#print(len(contours[0]))
+# print(len(contours[0]))
 big_contour = max(contours, key=cv2.contourArea)
 
 for item in contours:
