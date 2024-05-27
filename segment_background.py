@@ -12,8 +12,8 @@ RED_BACKGROUND_MAX = (10, 255, 255)
 def main(args):
     path = args.filename
     if args.red:
-        b_min = RED_BACKGROUND_MIN
-        b_max = RED_BACKGROUND_MAX
+        bmin = RED_BACKGROUND_MIN
+        bmax = RED_BACKGROUND_MAX
     else:
         bmin = GREEN_BACKGROUND_MIN
         bmax = GREEN_BACKGROUND_MAX
