@@ -79,8 +79,8 @@ def find_cards(img_path, background_min, background_max, image_crop = 0, card_bo
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('Card Segmenter')
     parser.add_argument('filename')
-    parser.add_argument('-r', '--red', action='store_true')
-    parser.add_argument('-i', '--img-crop', type=int)
-    parser.add_argument('-c', '--card-border', type=int)
+    parser.add_argument('-r', '--red', action='store_true', help='Whether to use green or red background')
+    parser.add_argument('-i', '--img-crop', type=int, help='An integer specifying how much of the input images borders to crop')
+    parser.add_argument('-c', '--card-border', type=int, help ='An integer specifying how many pixels to pad out the cards bordersgi')
     args = parser.parse_args()
     main(args)
